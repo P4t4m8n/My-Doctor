@@ -8,21 +8,25 @@ import { DoctorHome } from '../pages/doctor-home/doctor-home';
 import { DoctorPatients } from '../pages/doctor-patients/doctor-patients';
 import { DoctorProfile } from '../pages/doctor-profile/doctor-profile';
 import { DoctorSchedule } from '../pages/doctor-schedule/doctor-schedule';
+import { IconPatients } from '../../../core/icons/icon-patients/icon-patients';
+import { IconCalendar } from '../../../core/icons/icon-calendar/icon-calendar';
+import { IconSchedule } from '../../../core/icons/icon-schedule/icon-schedule';
+import { IconSettings } from '../../../core/icons/icon-settings/icon-settings';
 
 export const DOCTOR_PATHS = {
   dashboard: 'doctor/dashboard',
   patients: 'doctor/patients',
   appointments: 'doctor/appointments',
   schedule: 'doctor/schedule',
-  profile: 'doctor/profile',
+  settings: 'doctor/settings',
 };
 
 export const DOCTOR_NAV_ROUTES: INavRoute[] = [
   { route: DOCTOR_PATHS.dashboard, label: 'Dashboard', icon: IconDashboard },
-  { route: DOCTOR_PATHS.patients, label: 'Patients', icon: IconDashboard },
-  { route: DOCTOR_PATHS.appointments, label: 'Appointments', icon: IconDashboard },
-  { route: DOCTOR_PATHS.schedule, label: 'Schedule', icon: IconDashboard },
-  { route: DOCTOR_PATHS.profile, label: 'Profile', icon: IconDashboard },
+  { route: DOCTOR_PATHS.patients, label: 'Patients', icon: IconPatients },
+  { route: DOCTOR_PATHS.appointments, label: 'Appointments', icon: IconCalendar },
+  { route: DOCTOR_PATHS.schedule, label: 'Schedule', icon: IconSchedule },
+  { route: DOCTOR_PATHS.settings, label: 'Settings', icon: IconSettings },
 ];
 
 const DOCTOR_ALLOWED_ROLES = ['Doctor', 'Admin'];
@@ -54,7 +58,7 @@ export const DOCTOR_ROUTES: Routes = [
     data: { roles: DOCTOR_ALLOWED_ROLES },
   },
   {
-    path: DOCTOR_PATHS.profile,
+    path: DOCTOR_PATHS.settings,
     component: DoctorProfile,
     canActivate: DOCTOR_GUARDS,
     data: { roles: DOCTOR_ALLOWED_ROLES },
