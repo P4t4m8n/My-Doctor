@@ -1,0 +1,17 @@
+<div class="logo">
+  <app-icon-logo
+    [style]="{
+        width: '3.5rem',
+        height: '3.5rem',
+        fill: '#2563EB',
+        display: 'block',
+    }"
+  />
+  <span>
+    <h2>MediCare</h2>
+    <p>Clinic Management</p>
+  </span>
+</div>
+@if (session_user && session_user.role) {
+<app-side-menu-nav [role]="session_user.role!" />
+}

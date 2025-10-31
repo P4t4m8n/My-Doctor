@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  width: 18rem;
+  gap: 2.5rem;
+}
