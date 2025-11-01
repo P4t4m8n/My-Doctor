@@ -3,11 +3,11 @@ import { NgComponentOutlet } from '@angular/common';
 
 import { AuthService } from '../../../features/auth/services/auth';
 
-import { DoctorHome } from '../../../features/doctor/pages/doctor-home/doctor-home';
 
 import { Role } from '../../../features/auth/enums/role';
 
 import type { IAuthDTO } from '../../../features/auth/interfaces/auth';
+import { DoctorDashboard } from '../../../features/doctor/pages/doctor-dashboard/doctor-dashboard';
 
 @Component({
   selector: 'landing-page',
@@ -32,7 +32,7 @@ export class LandingPage implements OnInit {
       case Role.Admin:
         return null;
       case Role.Doctor:
-        return DoctorHome;
+        return DoctorDashboard;
       case Role.Patient:
         return null;
       case Role.Nurse:

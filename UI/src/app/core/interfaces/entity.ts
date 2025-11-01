@@ -3,12 +3,16 @@ export interface IID {
 }
 
 export interface ITimestamps {
-  createdAt?: string | Date;
-  updatedAt?: string | Date;
+  created_at?: string | Date;
+  updated_at?: string | Date;
 }
 
 export interface IName {
   name?: string | null;
+}
+
+export interface IPublicId {
+  public_id?: string;
 }
 
 export interface IEntity extends IID, ITimestamps {}

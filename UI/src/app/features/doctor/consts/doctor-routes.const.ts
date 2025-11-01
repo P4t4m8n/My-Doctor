@@ -4,7 +4,6 @@ import { INavRoute } from '../../../core/models/nav-routes.model';
 import { authGuard } from '../../auth/guards/auth-guard';
 import { roleGuard } from '../../user/guards/role-guard';
 import { DoctorAppointments } from '../pages/doctor-appointments/doctor-appointments';
-import { DoctorHome } from '../pages/doctor-home/doctor-home';
 import { DoctorPatients } from '../pages/doctor-patients/doctor-patients';
 import { DoctorProfile } from '../pages/doctor-profile/doctor-profile';
 import { DoctorSchedule } from '../pages/doctor-schedule/doctor-schedule';
@@ -12,6 +11,7 @@ import { IconPatients } from '../../../core/icons/icon-patients/icon-patients';
 import { IconCalendar } from '../../../core/icons/icon-calendar/icon-calendar';
 import { IconSchedule } from '../../../core/icons/icon-schedule/icon-schedule';
 import { IconSettings } from '../../../core/icons/icon-settings/icon-settings';
+import { DoctorDashboard } from '../pages/doctor-dashboard/doctor-dashboard';
 
 export const DOCTOR_PATHS = {
   dashboard: 'doctor/dashboard',
@@ -35,7 +35,7 @@ const DOCTOR_GUARDS = [authGuard, roleGuard];
 export const DOCTOR_ROUTES: Routes = [
   {
     path: DOCTOR_PATHS.dashboard,
-    component: DoctorHome,
+    component: DoctorDashboard,
     canActivate: DOCTOR_GUARDS,
     data: { roles: DOCTOR_ALLOWED_ROLES },
   },

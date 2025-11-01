@@ -1,0 +1,56 @@
+<header>
+  <h2>Dashboard</h2>
+  <p>Welcome back {{ this.session_user?.first_name | titlecase }}</p>
+</header>
+
+<ul>
+  <li>
+    <app-icon-calendar
+      [style]="{
+        width: '2.5rem',
+        height: '2.5rem',
+        stroke: 'rgba(0, 0, 0, 0.75)'
+      }"
+    />
+    <p>Total Appointments Today</p>
+    <p>{{ this.appointments.length }}</p>
+  </li>
+  <li>
+    <app-icon-schedule
+      [style]="{
+        width: '2.5rem',
+        height: '2.5rem',
+        stroke: 'rgba(0, 0, 0, 0.75)'
+      }"
+    />
+    <p>Pending Appointments</p>
+    <p>{{ this.pending_appointments }}</p>
+  </li>
+  <li>
+    <app-icon-patients
+      [style]="{
+        width: '2.5rem',
+        height: '2.5rem',
+        stroke: 'rgba(0, 0, 0, 0.75)'
+      }"
+    />
+    <p>New Patients</p>
+    <p>{{ this.new_patients }}</p>
+  </li>
+</ul>
+
+<div>
+  <h3>Today's Appointments</h3>
+  <ul>
+    @for (appointment of this.appointments; track appointment.id) {
+    <li>
+      <p>
+        {{ appointment.patient.first_name | titlecase }}
+        {{ appointment.patient.last_name | titlecase }}
+      </p>
+      <p>{{ appointment.appointment_time }}</p>
+      <p>Status: {{ appointment.status | titlecase }}</p>
+    </li>
+    }
+  </ul>
+</div>

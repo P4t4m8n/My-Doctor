@@ -7,7 +7,6 @@
   width: 18rem;
   gap: 2.5rem;
   transition: width 0.3s ease-in-out;
-  background-color: aqua;
 
   header {
     display: flex;
