@@ -3,8 +3,8 @@ import { IconComponent } from '../../abstracts/icon-component';
 import { NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'app-icon-calendar',
+  selector: 'app-icon-close-open',
   imports: [NgStyle],
-  templateUrl: './icon-calendar.html',
+  templateUrl: './icon-close-open.html',
 })
-export class IconCalendar extends IconComponent {}
+export class IconCloseOpen extends IconComponent {}

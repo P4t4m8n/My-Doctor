@@ -6,6 +6,5 @@ import { IconComponent } from '../../abstracts/icon-component';
   selector: 'app-icon-schedule',
   imports: [NgStyle],
   templateUrl: './icon-schedule.html',
-  styleUrl: './icon-schedule.css',
 })
 export class IconSchedule extends IconComponent {}

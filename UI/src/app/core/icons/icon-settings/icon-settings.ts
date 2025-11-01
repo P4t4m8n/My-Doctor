@@ -6,6 +6,5 @@ import { NgStyle } from '@angular/common';
   selector: 'app-icon-settings',
   imports: [NgStyle],
   templateUrl: './icon-settings.html',
-  styleUrl: './icon-settings.css',
 })
 export class IconSettings extends IconCalendar {}

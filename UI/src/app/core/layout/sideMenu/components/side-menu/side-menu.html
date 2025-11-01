@@ -1,4 +1,4 @@
-<div class="logo">
+<header>
   <app-icon-logo
     [style]="{
         width: '3.5rem',
@@ -11,7 +11,48 @@
     <h2>MediCare</h2>
     <p>Clinic Management</p>
   </span>
-</div>
+
+  <button (click)="onToggle()">
+    <app-icon-close-open
+      [style]="{
+        width: '2rem',
+       
+      }"
+    />
+  </button>
+</header>
+
 @if (session_user && session_user.role) {
-<app-side-menu-nav [role]="session_user.role!" />
+<nav>
+  <ul class="nav-list">
+    @for(nav_route of nav_routes;track nav_route.label ) {
+    <li>
+      <a [routerLink]="nav_route.route">
+        <ng-container
+          [ngComponentOutlet]="nav_route.icon"
+          [ngComponentOutletInputs]="{
+            style: {
+              width: '2rem',
+              height: '2rem',
+              minHeight: '2rem',
+              minWidth: '2rem',
+              stroke: 'rgba(0, 0, 0, 1)'
+            }
+          }"
+        >
+        </ng-container>
+        <p>
+          {{ nav_route.label }}
+        </p>
+      </a>
+    </li>
+    }
+  </ul>
+</nav>
 }
+
+<footer>
+  <img [src]="session_user?.avatarUrl" alt="User Avatar" />
+  <h5>{{ session_user?.first_name | titlecase }}</h5>
+  <p>{{ session_user?.role | toRole }}</p>
+</footer>

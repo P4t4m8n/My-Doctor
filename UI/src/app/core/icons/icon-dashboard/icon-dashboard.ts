@@ -6,6 +6,5 @@ import { IconComponent } from '../../abstracts/icon-component';
   selector: 'app-icon-dashboard',
   imports: [NgStyle],
   templateUrl: './icon-dashboard.html',
-  styleUrl: './icon-dashboard.css',
 })
 export class IconDashboard extends IconComponent {}
